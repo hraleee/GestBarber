@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ricerca Servizio</title>
+</head>
+<body>
+
+<form action="serviziolista" method="POST">
+
+<input type=input name="nomeServizio">
+<input type=submit value="Ricerca">
+
+
+
+
+</form>
+
+
+
+
+
+
+
+</body>
+</html>

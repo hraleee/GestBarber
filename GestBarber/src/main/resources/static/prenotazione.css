@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dcd2ba;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+    background-image: url('imgregistrazione.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+form {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(245, 225, 203, 0.9);
+}
+
+h1 {
+    color: #5c3a21;
+    text-align: center;
+    z-index: 1;
+}
+
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5c3a21;
+    width: 50%;
+    
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #8b735b;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #5c3a21;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    width: calc(100% - 20px);
+    border: none;
+    border-radius: 8px;
+}
+
+input[type="submit"]:hover {
+    background-color: #8b735b;
+}
+
+.service {
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service span {
+    width:30%;
+}
+
+.service input {
+    margin-top: 5px;
+}
+
+
+ .menu {
+            text-decoration: none;
+            color: #5c3a21;
+            font-weight: bold;
+            font-size: 25px;
+            margin: 0 20px;
+        }
+
+        .menu:hover {
+            color: #8b735b;
+        }
+
