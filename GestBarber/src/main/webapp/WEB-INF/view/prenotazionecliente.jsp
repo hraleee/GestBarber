@@ -33,10 +33,13 @@
 
 
 	<form action="Contiene" method="POST">
+		
+		
+		<center><h1>Prenota il tuo Taglio</h1></center>
 		<center>
-			<a class="menu" href="home">Home</a>
-		</center>
-		<center>
+			<a class="menu" href="menuclienti">Home</a>
+		
+		
 			<a class="menu" href="logout">Log out</a>
 		</center>
 		<h1>
@@ -92,6 +95,8 @@
 		</center>
 		<input type="hidden" id="totalCost" name="totalCost" value="0">
 		<input type="submit" value="Prenota">
+		<h2>${prenotazioneS }</h2>
 	</form>
+	
 </body>
 </html>

@@ -45,6 +45,9 @@ public class Servizio {
 	public Float getCostoServizio() {
 		return costoServizio;
 	}
+	
+	
+	
 	public void setCostoServizio(Float costoServizio) {
 		this.costoServizio = costoServizio;
 	}

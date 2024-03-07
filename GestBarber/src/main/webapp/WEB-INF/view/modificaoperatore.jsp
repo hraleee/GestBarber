@@ -5,15 +5,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="modifica.css">
 </head>
 <body>
 
 
 
 
-
+<div class="modify-form">
+ <center> <a class="menu" href="gestioneoperatori">Home</a>  </center>
 <form action="ricercaPerCfOp" method="POST">
-
+<center><h1>Modifica Operatore</h1></center>
 Codice Fiscale:<input type=text name=cfDaRic placeholder="Inserisci il codice fiscale">
 <input type=submit value="Ricerca">
 
@@ -44,7 +46,7 @@ Nome:<input type="text" name=nuovoNome value="${nomevalore}"><br>
  
      Password:<input type="text" name=nuovaPassword value="${passwordvalore}"><br>
      
-      <input type="hidden" name=nuovoAbil value="${abilitatovalore}" readonly>
+      
      
           Categoria:
             <select name="categoria" >        
@@ -53,9 +55,18 @@ Nome:<input type="text" name=nuovoNome value="${nomevalore}"><br>
                 <option value="3">Operatore</option>
                
             </select><br>
+            
+          Abilita:
+            <select name="abilita" >        
+                 <option value="1">Abilitato</option>  
+                  <option value="0">Non abilitato</option>  
+            </select><br>
+            
      <input type=submit value="Modifica">
   
+  
+           ${modifica}
 </form>
-
+</div>
 </body>
 </html>

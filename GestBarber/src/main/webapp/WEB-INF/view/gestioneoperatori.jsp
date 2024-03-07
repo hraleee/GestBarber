@@ -11,9 +11,13 @@
 
 <div id=tabella>
 <div id=menu>
+<center><h2>Area Titolare Gestione Operatori</h2></center> 
+
 <a  class=menu href="inseriscioperatore">Insersci Operatore</a>
 <a  class=menu href="ricercaoperatore">Ricerca Operatore</a>
 <a  class=menu href="modificaoperatore">Modifica Operatore</a>
+<a class="menu" href="areatitolare">Home</a>
+
 </div>
 
             </div>

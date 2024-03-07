@@ -45,11 +45,15 @@ public class PrenotazioneService {
 	
 	public List <ClienteDto> prenotazioneClienteEsegeuita(String cf){
 		
-		System.out.print("---------------------------------------------------------------------");
-		System.out.print(cf);
 		
 		return this.cR.QueryPrenotazioneCliente(cf);
 		
+	}
+	
+	
+	public List <ClienteDto> prenotazioneInCorsoCliente(String cf){
+		
+		return this.cR.QueryPrenotazioneInCorsoCliente(cf);
 	}
 	
 }

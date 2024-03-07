@@ -10,6 +10,7 @@
 
     <div class="container">
         <div class="form-container">
+        <a class="menu" href="gestionecliente">Home</a>
             <h1>Ricerca per Codice Fiscale</h1>
             <form action="ricercaPerCf" method="POST">
                 <div class="input-container">
@@ -21,33 +22,26 @@
         </div>
 
         <div class="results">
-            <h2>Risultati:</h2>
-            <p>
+           <center><h2>Risultati:</h2></center> 
+           
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" value="${nomeValore}" readonly>
-            </p>
-            <p>
+            
                 <label for="cognome">Cognome:</label>
                 <input type="text" id="cognome" value="${cognomeValore}" readonly>
-            </p>
-            <p>
+            
                 <label for="cf">Codice Fiscale:</label>
                 <input type="text" id="cf" value="${cfValore}" readonly>
-            </p>
-            <p>
+
                 <label for="tel">Telefono:</label>
                 <input type="text" id="tel" value="${telValore}" readonly>
-            </p>
-            
-            <p>
+           
                 <label for="username">Username:</label>
                 <input type="text" id="username" value="${usernameValore}" readonly>
-            </p>
-            
-            <p>
+                
                 <label for="password">password:</label>
                 <input type="text" id="password" value="${passwordValore}" readonly>
-            </p>
+            
            <h1> <p class="error">${valoreErrorecf}</p></h1>
         </div>
     </div>

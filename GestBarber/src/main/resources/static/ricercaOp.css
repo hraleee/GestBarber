@@ -15,10 +15,10 @@ body {
 }
 
 .container {
-    width: 60%;
-    background-color: #f5e1cb;
+    width: 40%;
+    height:100%;
+     background-color: rgba(245, 225, 203, 0.9);
     border-radius: 10px;
-    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ body {
 
 .form-container {
     width: 100%;
-    margin-top: 20px;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,4 +72,25 @@ input[type="submit"]:hover {
         opacity: 1;
     }
 }
+
+#menu {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .menu {
+            text-decoration: none;
+            color: #8b735b;
+            font-weight: bold;
+            font-size: 25px;
+            margin: 0 20px;
+        }
+
+        .menu:hover {
+            color: white;
+        }
+        
+         h2{
+         color: #5c3a21;
+        }
 

@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="menuclienti.css">
 </head>
 <body>
+
+
+
 	<div id="container">
 		<%
             String codiceFiscale = (String) session.getAttribute("codiceFiscale");
@@ -23,6 +26,7 @@
 			<a class="menu" href="prenotazioniincorso">Prenotazioni in Corso</a> 
 				<a class="menu" href="prenotazionecliente">Prenota</a> 
 				<a class="menu" href="logout">Log out</a>
+			
 		</div>
 	</div>
 </body>

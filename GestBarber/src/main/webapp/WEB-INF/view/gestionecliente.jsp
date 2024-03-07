@@ -11,9 +11,11 @@
 
 <div id=tabella>
 <div id=menu>
+<center><h2>Area Titolare Gestione Clienti</h2></center> 
+<a class="menu" href="areatitolare">Home</a> 
 <a class=menu href="ricercacf">Ricerca Cliente</a>
 <a class=menu href="modificacliente">Modifica Cliente</a>
-<a class=menu href="eliminacliente">Elimina Cliente</a>
+<a class="menu" href="logout">Log out</a>
 </div>
 
             </div>

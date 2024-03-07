@@ -32,13 +32,7 @@ public class ServizioService {
 		
 	}
 	
-    public List<Servizio> trovaListaServizio(String nomeServizio)
-    {
-    	
-    	
-    	
-    	return this.cR.findAll();
-    }
+    
 	
 	
 	

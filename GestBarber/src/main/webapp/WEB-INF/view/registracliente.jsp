@@ -19,6 +19,8 @@
 				<h1>Registra Cliente</h1>
 			</center>
 
+             <center> <a class="menu" href="logincliente">Login</a>
+            <a class="menu" href="home">Home</a>   </center>
 			<form action="inserisciCliente" method="POST">
 				<div class="input-container">
 					<label for="nomeCliente">Nome</label> <input type="text"

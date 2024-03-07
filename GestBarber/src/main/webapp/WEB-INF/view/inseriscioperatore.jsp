@@ -12,8 +12,9 @@
 <div class="container">
     <div class="image-container"></div>
     <div class="form-container">
-                  <center>
+                  <center><a class="menu" href="gestioneoperatori">Home</a>
 				<h1>Registra Operatore</h1>
+				<center>
 			       </center>
     <form action="registraOperatore" method="POST" >
 
@@ -61,10 +62,10 @@
         </div>
 
         <input type="submit" value="Aggiungi">
-
+  <h1 class="esito">${esito}</h1>
     </form>
     
-    <h1 class="esito">${esito}</h1>
+    
     </div>
     
 

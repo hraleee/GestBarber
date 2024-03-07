@@ -22,9 +22,11 @@ public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Inte
 	 @Query("SELECT NEW it.rf.gestsalone.model.DTO.SegreteriaDto (p.codPrenotazione, c.nomeCliente, c.cognomeCliente, con.idOperazione, s.nomeServizio, o.cfOp) FROM Cliente c JOIN c.listap p JOIN p.listacontiene con JOIN con.servizio s JOIN con.operatore o WHERE con.statoOperazioneContiene = false AND CAST(con.DataPrenotazioneCliente AS DATE) = CAST(:date AS DATE)")
 	    List<SegreteriaDto> QuerySpecial(@Param("date") Date date);
 
-	 @Query("SELECT NEW it.rf.gestsalone.model.DTO.ClienteDto (p.codPrenotazione, c.nomeCliente, c.cognomeCliente, con.DataPrenotazioneCliente, s.nomeServizio, o.cfOp) FROM Cliente c JOIN c.listap p JOIN p.listacontiene con JOIN con.servizio s JOIN con.operatore o WHERE con.statoOperazioneContiene = true AND c.cfCliente  = :cf ")
+	 @Query("SELECT NEW it.rf.gestsalone.model.DTO.ClienteDto (p.codPrenotazione, con.DataPrenotazioneCliente, s.nomeServizio, o.cfOp) FROM Cliente c JOIN c.listap p JOIN p.listacontiene con JOIN con.servizio s JOIN con.operatore o WHERE con.statoOperazioneContiene = true AND c.cfCliente  = :cf ")
 	    List<ClienteDto> QueryPrenotazioneCliente(String cf);
 
-
+	 @Query("SELECT NEW it.rf.gestsalone.model.DTO.ClienteDto (p.codPrenotazione, con.DataPrenotazioneCliente, s.nomeServizio, o.cfOp) FROM Cliente c JOIN c.listap p JOIN p.listacontiene con JOIN con.servizio s JOIN con.operatore o WHERE con.statoOperazioneContiene = false AND c.cfCliente  = :cf ")
+	    List<ClienteDto> QueryPrenotazioneInCorsoCliente(String cf);
+	 
 
 }

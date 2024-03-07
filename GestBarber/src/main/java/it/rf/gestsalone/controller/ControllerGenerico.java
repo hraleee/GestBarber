@@ -64,6 +64,8 @@ public class ControllerGenerico {
 
 		session.invalidate();
 		return "home";
+		
+		
 	}
 
 
@@ -238,7 +240,13 @@ public class ControllerGenerico {
 	}
 	
 	@GetMapping("listaservizio")
-	public String vailistaServizio() {
+	public String vailistaServizio(Model m) {
+		
+		
+		List <Servizio> listaServ= this.serS.findall();
+		
+		m.addAttribute("listaServ", listaServ);
+		
 		return "listaservizio";
 	}
 
@@ -254,6 +262,43 @@ public class ControllerGenerico {
 		 m.addAttribute("listaCf", listaprencliente);
 		 
 		return "prenotazionieseguite";
+	}
+	
+	@GetMapping("modificaservizio")
+	public String vaiModificaServizio(Model m) {
+		
+
+		List<Servizio> listaServ= this.serS.findall();
+
+		m.addAttribute("listaServ", listaServ);
+		
+		
+		return "modificaservizio";
+	}
+	
+	@GetMapping("prenotazioniincorso")
+	public String vaiPrenotazioniInCorso(HttpSession session, Model m) {
+		
+		String cf =  (String) session.getAttribute("codiceFiscale");
+		
+		
+		 List<ClienteDto> listaprencliente= this.prenS.prenotazioneInCorsoCliente(cf);
+		
+		 m.addAttribute("listaCf", listaprencliente);
+		
+		
+		return "prenotazioniincorso";
+	}
+	
+	@GetMapping("listinoprezzi")
+	public String vaiListaPrezzi(Model m) {
+		
+     List <Servizio> listaServ= this.serS.findall();
+		
+	 m.addAttribute("listaServ", listaServ);
+		
+		
+		return "listinoprezzi";
 	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	@PostMapping("inserisciCliente")
@@ -358,7 +403,7 @@ public class ControllerGenerico {
 
 
 	@PostMapping("modificaPerCfCliente")
-	public String vaiModificaPerCfCliente(@RequestParam String nomeRic, String cognomeRic, String cfRic, String telefonoRic, String usernameRic, String passwordRic, Model m) 
+	public String vaiModificaPerCfCliente(@RequestParam String nomeRic, String cognomeRic, String cfRic, String telefonoRic, String usernameRic, String passwordRic,Boolean abilita, Model m) 
 	{
 
 
@@ -368,7 +413,7 @@ public class ControllerGenerico {
 		String nuovotelefono= telefonoRic;
 		String nuovousername= usernameRic;
 		String nuovapassword= passwordRic;
-
+        Boolean nuovoabil = abilita;
 
 
 		Cliente c = new  Cliente();
@@ -379,16 +424,18 @@ public class ControllerGenerico {
 		c.setTelefonoCliente(nuovotelefono);
 		c.setUsernameCliente(nuovousername);
 		c.setPasswordCliente(nuovapassword);
-
+        c.setAbilitatoCliente(abilita);
+		
 		this.cS.ModificaCliente(c);
 
 		m.addAttribute("nomeValore", nuovonome);
 		m.addAttribute("cognomeValore", nuovocognome);
 		m.addAttribute("cfValore", nuovocf);
-		m.addAttribute("telefonoValore", nuovotelefono);
+		m.addAttribute("telValore", nuovotelefono);
 		m.addAttribute("usernameValore", nuovousername);
 		m.addAttribute("passwordValore", nuovapassword);
-
+        m.addAttribute("modifica", "modifica avvenuta con successo");
+		
 		return "modificacliente";
 
 	}
@@ -550,7 +597,7 @@ public class ControllerGenerico {
 
 
 	@PostMapping("modificaCfOperatore")
-	public String vaiModificaOperatore(@RequestParam String nuovoNome, String nuovoCognome, String nuovoCf, String nuovoUsername, String nuovaPassword, Categoria categoria, Boolean nuovoAbil, Model m) {
+	public String vaiModificaOperatore(@RequestParam String nuovoNome, String nuovoCognome, String nuovoCf, String nuovoUsername, String nuovaPassword, Categoria categoria, Boolean abilita, Model m) {
 
 
 
@@ -562,7 +609,7 @@ public class ControllerGenerico {
 		o.setOpUsername(nuovoUsername);
 		o.setOpPassword(nuovaPassword);
 		o.setCategoria(categoria);
-        o.setOpAbilitato(nuovoAbil);
+        o.setOpAbilitato(abilita);
 
 		this.opS.saveOp(o);
 
@@ -572,7 +619,7 @@ public class ControllerGenerico {
 		m.addAttribute("usernamevalore", nuovoUsername);
 		m.addAttribute("passwordvalore", nuovaPassword);
 		m.addAttribute("categoriavalore", categoria);
-		m.addAttribute("abilitatovalore", nuovoAbil);
+		m.addAttribute("modifica", "Modifica andata a buon fine");
 
 
 
@@ -645,6 +692,7 @@ public class ControllerGenerico {
 
 
 		m.addAttribute("servizio", list);
+		m.addAttribute("prenotazioneS", "prenotazione eseguita");
 
 
 		return "prenotazionecliente";
@@ -716,16 +764,25 @@ public class ControllerGenerico {
 		
 	}
 	
-	@PostMapping("serviziolista")
-	public String vaiServizioRicerca(String nomeServizio) {
+	@PostMapping("ServizioMod")
+	public String vaiServizioRicerca(@RequestParam String nomeServizio, Float costoServizio, Integer durataServizio, Integer idServizio,Model m) {
 		
-		Servizio s = new  Servizio();
+        
+		Servizio s = new Servizio();
 		
-		List<Servizio> listaServ= this.serS.trovaListaServizio(nomeServizio);
-	
-		//////////////////////auuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+		s.setNomeServizio(nomeServizio);
+		s.setCostoServizio(costoServizio);
+		s.setDurataServizio(durataServizio);
+		s.setId(idServizio);
 		
-		return "listaservizio";
+		this.serS.SalvaServizio(s);
+		
+		List <Servizio> listaServ= this.serS.findall();
+		
+		m.addAttribute("listaServ", listaServ);
+		
+		m.addAttribute("modifica", "modifica andata a buon fine");
+		return "modificaservizio";
 	}
 	
 	@PostMapping("termina")

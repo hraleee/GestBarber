@@ -59,12 +59,13 @@ input[type="submit"]:hover {
 
 a {
     text-decoration: none;
-    color: #5c3a21;
+    color: #8b735b;
     font-weight: bold;
+     
 }
 
 a:hover {
-    color: #8b735b;
+    color:white;
 }
 
 h2 {

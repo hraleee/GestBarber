@@ -24,7 +24,7 @@
 <div id="menu">
 <a class="menu" href="home">Home</a>
 <a class="menu" href="prenotazionesegretaria">Prenotazione</a>
-<a class="menu" href="">Listino Prezzi</a>
+<a class="menu" href="listinoprezzi">Listino Prezzi</a>
 <a class="menu" href="logout">Log out</a>
 
 </div>

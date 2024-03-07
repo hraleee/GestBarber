@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #dcd2ba; 
+    background-color: #dcd2ba;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,15 +10,17 @@ body {
 }
 
 .container {
-    width: 60%;
-    background-color: #f5e1cb; 
+    width: 70%;
+    height: 100%;
+    background-color: #f5e1cb;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    opacity: 0; 
+    opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    margin-top: 20px;
 }
 
 .image-container {
@@ -29,7 +31,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 .form-container {
     flex: 1;
@@ -48,40 +49,38 @@ h1 {
 
 .input-container {
     width: 100%;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
- 
 }
 
 label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #5c3a21; 
+    color: #5c3a21;
 }
 
 input {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #8b735b; 
+    border: 1px solid #8b735b;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
 input[type="submit"] {
-    background-color: #5c3a21; 
+    background-color: #5c3a21;
     color: white;
     cursor: pointer;
-    padding: 10px; 
-    font-size: 16px; 
-    width:200px;
-    border: none; 
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: none;
     border-radius: 8px;
 }
 
 input[type="submit"]:hover {
-    background-color: #8b735b; 
+    background-color: #8b735b;
 }
 
 @keyframes fadeIn {
@@ -91,4 +90,36 @@ input[type="submit"]:hover {
     to {
         opacity: 1;
     }
-} 
+}
+
+#menu {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu {
+    text-decoration: none;
+    color: #5c3a21;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 20px;
+}
+
+.menu:hover {
+    color: #8b735b;
+}
+
+select{
+	height: 30px;
+	width: 100%;
+	adding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #8b735b;
+    border-radius: 8px;
+    margin-bottom: 10px;
+     font-size: 16px; 
+    text-align-last: center; 
+    
+    
+    
+}
